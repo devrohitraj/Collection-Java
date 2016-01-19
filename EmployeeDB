@@ -1,0 +1,33 @@
+package com.wipro.milestone1.TM4.projects.ques1;
+
+
+import java.util.Set;
+import java.util.TreeSet;
+
+public class EmployeeDB{
+	
+	Employee e = new Employee();
+	
+	Set<Employee> employees = new TreeSet<Employee>();
+	
+	
+	public void listEmployee(int choice){
+		
+		System.out.format("%-15s %-15s %-15s %-30s %-15s\n","Firstname","Lastname","Mobile","Email","Address");
+		
+		for(Employee e : employees){
+		System.out.format("%-15s %-15s %-15s %-30s %-15s\n",e.getFname(),e.getLname(),e.getMob(),e.getEmail(),e.getAddr());
+		}
+		
+	}
+
+
+	
+
+
+	public void addEmployee(Employee emp) {
+		
+		employees.add(emp);
+	}
+
+}
