@@ -1,0 +1,82 @@
+package com.wipro.milestone1.TM4.projects.ques1;
+
+import java.util.InputMismatchException;
+import java.util.Scanner;
+
+public class TestEmployee {
+
+	public static void main(String[] args) {
+		
+		boolean flag = true;
+		//String choice1 = "y";
+       
+		while(flag){
+		//while(choice1.equalsIgnoreCase("y")){
+		try{
+			
+		//Employee e = new Employee();
+		EmployeeDB edb = new EmployeeDB();
+		
+		System.out.println("\nEnter the Number of Employees");
+		
+        int choice;
+		
+		Scanner sc = new Scanner(System.in);
+	    choice = sc.nextInt();
+	    
+	    for(int i = 1; i <= choice; i++){
+	    	
+	    	Employee emp = new Employee();
+	    	
+	    	System.out.println("Enter Employee "+i+" Details:");
+	    	System.out.println("Enter the First Name:");
+	    	String fname = sc.next();
+	    	emp.setFname(fname);
+	    	//edb.fname.add(e.getFname());
+	    	
+	    	System.out.println("Enter the Last Name:");
+	    	String lname = sc.next();
+	    	emp.setLname(lname);
+	    	//edb.lname.add(e.getLname());
+	    	
+	    	System.out.println("Enter the Mobile:");
+	    	Long mob = sc.nextLong();
+	    	emp.setMob(mob);
+	    	//edb.mob.add(e.getMob());
+	    	
+	    	System.out.println("Enter the EMail ID:");
+	    	String email = sc.next();
+	    	emp.setEmail(email);
+	    	//edb.email.add(e.getEmail());
+	    	
+	    	System.out.println("Enater the Address:");
+	    	String addr = sc.next();
+	    	emp.setAddr(addr);
+	    	//edb.addr.add(e.getAddr());
+	    	
+	        edb.addEmployee(emp);
+	    }
+	    
+	    edb.listEmployee(choice);
+	
+		
+	}
+
+	    catch(InputMismatchException ime){
+	    	System.out.println("Please Enter Integer Only");
+	    }
+		catch(NumberFormatException nfe){
+			System.out.println("Please provide correct number format");
+			//nfe.printStackTrace();
+		}
+		catch(Exception e){
+			System.out.println("Some error occured, Please try again later.");
+			e.printStackTrace();
+		}
+	
+	
+}
+
+	}
+
+}
