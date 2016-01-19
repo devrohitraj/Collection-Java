@@ -1,0 +1,37 @@
+package com.wipro.milestone1.TM4.projects.ques5;
+
+import java.util.HashSet;
+import java.util.Set;
+
+public class BoxHandler {
+	
+	Set<Box> ts = new HashSet<Box>();
+	double vol;
+	
+	public boolean addBox(Box b){
+		
+		ts.add(b);
+		
+		return true;	
+	}
+	
+	public boolean equals(Object obj){
+		
+		for(Box b : ts){
+			if(b.getVol() == ((Box) obj).getVol()){
+				return true;
+			}
+		}
+		
+		return false;
+		
+	}
+	
+	public void showBox(){
+		System.out.println("Unique Boxes in the Sets are: ");
+		for(Box b : ts){
+			System.out.println("Length = "+b.getLength()+" Width = "+b.getWidth()+" Height = "+b.getHeight()+" Volume = "+b.getVol());
+		}
+	}
+
+}
