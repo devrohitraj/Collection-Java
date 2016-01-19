@@ -1,0 +1,63 @@
+package com.wipro.milestone1.TM4.projects.ques3;
+
+import java.util.HashMap;
+import java.util.Map;
+
+public class Card {
+	
+	private char symbol;
+	private int number;
+	static int counter = 0;
+	
+	Map<Character, Integer> a = new HashMap<Character, Integer>();
+	//Map<Character, Integer> b = new HashMap<Character, Integer>();
+	//Map<Character, Integer> c = new HashMap<Character, Integer>();
+	//Map<Character, Integer> d = new HashMap<Character, Integer>();
+	
+	
+	public char getSymbol() {
+		return symbol;
+	}
+	public void setSymbol(char symbol) {
+		this.symbol = symbol;
+	}
+	public int getNumber() {
+		return number;
+	}
+	public void setNumber(int number) {
+		this.number = number;
+	}
+	
+	public void checkCards(char symbol, int number){
+		
+		char option = symbol;
+		
+		if(a.containsKey(option)){
+			counter++;
+		}
+		else{
+			a.put(symbol, number);
+			counter++;
+		}
+		
+		/*switch (option) {
+		case 'a':
+			a.put(symbol, number);
+			break;
+		case 'b':
+			b.put(symbol, number);
+			break;
+		case 'c':
+			c.put(symbol, number);
+			break;
+		case 'd':
+			d.put(symbol, number);
+			break;
+
+		default:
+			break;
+		} */
+		
+	}
+
+}
