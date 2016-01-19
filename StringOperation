@@ -1,0 +1,65 @@
+package com.wipro.milestone1.TM4.projects.ques2;
+
+import java.util.Set;
+import java.util.TreeSet;
+
+public class StringOperation {
+	
+	static Set<String> items = new TreeSet<String>();
+	
+	public String insertItem(String item){
+		
+		items.add(item);
+		//System.out.println(items);
+		
+		return "Inserted Successfully: "+item+"\n";
+		
+	}
+	
+	public String searchItem(String item){
+		
+		if(!items.contains(item)){
+			return "Item not Found in the list: "+item;
+		}
+		
+		
+		return "Item Found in the List: "+item;
+		
+	}
+	
+	public String deleteItem(String item){
+		
+		if(!items.contains(item)){
+			return "Item does not exist: "+item;
+		}
+		
+		items.remove(item);
+		
+		return "Deleted successfully: "+item;
+		
+		
+	}
+	
+	public Set<String> displayItems(){
+		
+		System.out.println("The Item in the list are: ");
+		//System.out.println(items);
+		
+		/*Iterator iterator;
+		iterator = items.iterator();
+		     
+		   // displaying the Tree set data
+		//System.out.println("Tree set data in ascending order: ");     
+		while (iterator.hasNext()){
+		    System.out.println(iterator.next() + " ");
+		}
+		*/
+		
+		for(String item : items){
+		    System.out.println(item+"\n");
+		}
+		return null;
+		
+	}
+
+}
