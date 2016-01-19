@@ -1,0 +1,74 @@
+package com.wipro.milestone1.TM4.projects.ques4;
+
+import java.util.InputMismatchException;
+import java.util.Scanner;
+
+public class CardTester {
+
+	public static void main(String[] args) {
+		
+		
+		boolean flag = true;
+		
+	       
+		while(flag){
+		
+		try{
+			
+		Card card = new Card();
+		CardCollector cc = new CardCollector();
+		Scanner sc = new Scanner(System.in);
+		
+		
+	    	
+		
+	    	System.out.println("Enter Number of Cards :");
+	    	int number = sc.nextInt();
+	    	
+	    	for(int i = 1; i <= number; i++){
+	    		System.out.println("Enter Card "+i);
+	    		
+	    		char symbol;
+		        int choice;
+				
+				
+				
+				symbol = sc.next().trim().charAt(0);
+			    choice = sc.nextInt();
+			    card.setSymbol(symbol);
+			    card.setNumber(choice);
+			    
+			    cc.addValues(card.getSymbol(), card.getNumber());
+	    		
+	    		
+	    	}
+	    	
+	    	System.out.println("Distinct Symbols are :");
+	    	cc.distinctCard();
+	    	
+	    	cc.detailsCard();
+	    	
+	   
+	    
+		
+	}
+
+	    catch(InputMismatchException ime){
+	    	System.out.println("Please Enter Integer Only\n");
+	    }
+		catch(NumberFormatException nfe){
+			System.out.println("Please provide correct number format\n");
+			//nfe.printStackTrace();
+		}
+		catch(Exception e){
+			System.out.println("Some error occured, Please try again later.");
+			e.printStackTrace();
+		}
+	
+	
+}
+
+
+	}
+
+}
