@@ -1,0 +1,99 @@
+package com.wipro.milestone1.TM4.projects.ques2;
+
+import java.util.InputMismatchException;
+import java.util.Scanner;
+
+public class StringOperationTester {
+
+	public static void main(String[] args) {
+
+
+		boolean flag = true;
+		
+       
+		while(flag){
+		
+		try{
+			
+		StringOperationBean sob = new StringOperationBean();
+		StringOperation so = new StringOperation();
+		
+		System.out.println("1. Insert");
+		System.out.println("2. Search");
+		System.out.println("3. Delete");
+		System.out.println("4. Display");
+		System.out.println("5. Exit");
+		
+		System.out.println("Enter your Choice: ");
+		
+        int choice;
+		
+		Scanner sc = new Scanner(System.in);
+	    choice = sc.nextInt();
+	    
+	    switch(choice){
+	    
+	    case 1:
+	    	System.out.println("Enter the Item to be Inserted:");
+	    	String item = sc.next();
+	    	if(item == null || item.equals("")){
+	    		System.out.println("Name is required.");
+	    	}
+	    	else{
+	    		sob.setItem(item);
+	    	    System.out.println(so.insertItem(sob.getItem()));
+	    	}
+	    	break;
+	    case 2:
+	    	System.out.println("Enter the item to Search: ");
+	    	String item1 = sc.next();
+	    	if(item1 == null || item1.equals("")){
+	    		System.out.println("Name is required.");
+	    	}
+	    	else{
+	    		sob.setItem(item1);
+	    		System.out.println(so.searchItem(sob.getItem()));
+	    	}
+	    	break;
+	    case 3:
+	    	System.out.println("Enter the item to Delete: ");
+	    	String item2 = sc.next();
+	    	if(item2 == null || item2.equals("")){
+	    		System.out.println("Name is required.");
+	    	}
+	    	else{
+	    		sob.setItem(item2);
+	    		System.out.println(so.deleteItem(sob.getItem()));
+	    	}
+	    	break;
+	    case 4:
+	    	so.displayItems();
+	    	break;
+	    case 5:
+	    	System.out.println("Thank you for using our services, Exiting...");
+	    	System.exit(0);
+	   default: System.out.println("Please Enter correct Choice\n");
+	    		
+	    }
+	
+		
+	}
+
+	    catch(InputMismatchException ime){
+	    	System.out.println("Please Enter Integer Only\n");
+	    }
+		catch(NumberFormatException nfe){
+			System.out.println("Please provide correct number format\n");
+			//nfe.printStackTrace();
+		}
+		catch(Exception e){
+			System.out.println("Some error occured, Please try again later.");
+			e.printStackTrace();
+		}
+	
+	
+}
+
+	}
+
+}
