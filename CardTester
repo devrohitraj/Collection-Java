@@ -1,0 +1,97 @@
+package com.wipro.milestone1.TM4.projects.ques3;
+
+import java.util.InputMismatchException;
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.Scanner;
+
+
+public class CardTester {
+
+	public static void main(String[] args) {
+		
+		boolean flag = true;
+		
+	       
+		while(flag){
+		
+		try{
+			
+		Card card = new Card();
+		Scanner sc = new Scanner(System.in);
+		
+		
+	    
+	    //while(card.a.size() == 0 || card.b.size() == 0 || card.c.size() == 0 || card.d.size() == 0){
+	    	
+		while(!card.a.containsKey('a') || !card.a.containsKey('b') || !card.a.containsKey('c') || !card.a.containsKey('d')){
+	    	System.out.println("Enter a Card :");
+			
+			char symbol;
+	        int choice;
+			
+			
+			
+			symbol = sc.next().trim().charAt(0);
+		    choice = sc.nextInt();
+		    
+		    card.checkCards(symbol, choice);
+		   // System.out.println(symbol+" "+choice);
+	    }
+	    
+	    //System.out.println(card.a);
+	   // System.out.println(card.b);
+	    
+	    //System.out.println(card.a.size());
+	    //System.out.println(card.b.size());
+	    //System.out.println(card.c.size());
+	    //System.out.println(card.d.size());
+	    
+	    //int size = card.a.size() + card.b.size() + card.c.size() + card.d.size();
+	    
+	    System.out.println("Four Symbols gathered in "+Card.counter+" cards");
+	    
+	    System.out.println("Cards in sets are :");
+	    
+	    for (Entry<Character, Integer> entry : card.a.entrySet()) {
+	        System.out.println(entry.getKey()+" "+entry.getValue());
+	        //System.out.println(entry.getValue());
+	        // ...
+	    }
+	    
+	    //System.out.println(card.a);
+	    
+	    
+	    //Entry<Character, Integer> entry = card.a.entrySet().iterator().next();
+	   // Entry<Character, Integer> entry1 = card.b.entrySet().iterator().next();
+	   // Entry<Character, Integer> entry2 = card.c.entrySet().iterator().next();
+	   // Entry<Character, Integer> entry3 = card.d.entrySet().iterator().next();
+	    
+	    //System.out.println("Cards in Ste are :");
+	    //System.out.println(entry.getKey()+" "+entry.getValue());
+	   // System.out.println(entry1.getKey()+" "+entry1.getValue());
+	    //System.out.println(entry2.getKey()+" "+entry2.getValue());
+	   // System.out.println(entry3.getKey()+" "+entry3.getValue());
+	
+		
+	}
+
+	    catch(InputMismatchException ime){
+	    	System.out.println("Please Enter Integer Only\n");
+	    }
+		catch(NumberFormatException nfe){
+			System.out.println("Please provide correct number format\n");
+			//nfe.printStackTrace();
+		}
+		catch(Exception e){
+			System.out.println("Some error occured, Please try again later.");
+			e.printStackTrace();
+		}
+	
+	
+}
+
+
+	}
+
+}
