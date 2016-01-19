@@ -1,0 +1,50 @@
+package com.wipro.milestone1.TM4.projects.ques4;
+
+import java.util.ArrayList;
+import java.util.TreeMap;
+
+public class CardCollector {
+	
+	TreeMap<Character, ArrayList<Integer>> cards = new TreeMap<Character, ArrayList<Integer>>();
+	
+	public void addValues(char key, int value) {
+		   ArrayList<Integer> tempList = null;
+		   if (cards.containsKey(key)) {
+		      tempList = cards.get(key);
+		      if(tempList == null)
+		         tempList = new ArrayList<Integer>();
+		      tempList.add(value);  
+		   } else {
+		      tempList = new ArrayList<Integer>();
+		      tempList.add(value);               
+		   }
+		   cards.put(key,tempList);
+		}
+	
+	public void distinctCard(){
+		
+		for(Character c : cards.keySet()){
+			System.out.print(c+" ");
+		}
+		
+		System.out.println("");
+		//System.out.println(cards.keySet()+"\n");
+	}
+	
+	public void detailsCard(){
+		for(Character c : cards.keySet()){
+			int sum = 0;
+			int count = 0;
+			System.out.println("Cards in "+c+" Symbol");
+			for(Integer i : cards.get(c)){
+				System.out.println(c+" "+i);
+				sum += i;
+				count++;
+			}
+			System.out.println("Number of Cards :"+count+"\n");
+			System.out.println("Sum of Numbers : "+sum+"\n");
+		}
+	}
+	
+
+}
