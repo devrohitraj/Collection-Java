@@ -1,0 +1,48 @@
+package com.wipro.milestone1.TM4.projects.ques1;
+
+public class Employee implements Comparable<Employee>{
+	
+	private String fname;
+	private String lname;
+	private Long mob;
+	private String email;
+	private String addr;
+	public String getFname() {
+		return fname;
+	}
+	public void setFname(String fname) {
+		this.fname = fname;
+	}
+	public String getLname() {
+		return lname;
+	}
+	public void setLname(String lname) {
+		this.lname = lname;
+	}
+	public Long getMob() {
+		return mob;
+	}
+	public void setMob(Long mob) {
+		this.mob = mob;
+	}
+	public String getEmail() {
+		return email;
+	}
+	public void setEmail(String email) {
+		this.email = email;
+	}
+	public String getAddr() {
+		return addr;
+	}
+	public void setAddr(String addr) {
+		this.addr = addr;
+	}
+	@Override
+	public int compareTo(Employee o) {
+		// TODO Auto-generated method stub
+		return fname.compareTo(o.getFname());
+	}
+	
+	
+
+}
